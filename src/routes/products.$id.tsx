@@ -16,7 +16,7 @@ export const Route = createFileRoute("/products/$id")({
 });
 
 function ProductDetail() {
-  const { product } = Route.useLoaderData();
+  const { product } = Route.useLoaderData() as { product: Product };
   const related = getRelated(product);
   const addItem = useCart((s) => s.addItem);
 
