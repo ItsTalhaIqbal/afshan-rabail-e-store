@@ -4,13 +4,11 @@ import { ProductCard } from "@/components/ProductCard";
 import { StarRating } from "@/components/StarRating";
 import { Truck, ShieldCheck, RotateCcw, Sparkles } from "lucide-react";
 import { useState } from "react";
+import heroImg from "@/assets/products/abaya-ivory-bridal.jpg";
 
 export const Route = createFileRoute("/")({
   component: Home,
 });
-
-const heroImg =
-  "https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=1600&q=80";
 
 const testimonials = [
   { name: "Ayesha K.", text: "Beautiful stitching and fabric quality is amazing. My festive abaya was a hit at Eid!", rating: 5 },
