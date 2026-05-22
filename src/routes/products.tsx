@@ -8,7 +8,7 @@ export const Route = createFileRoute("/products")({
   component: ProductsPage,
 });
 
-const styles = ["All", "Casual", "Festive", "Bridal", "Kids", "Imported"];
+const styles = ["All", "Casual", "Festive", "Bridal", "Kids", "Imported", "Scarves"];
 const sortOptions = [
   { value: "featured", label: "Featured" },
   { value: "price-asc", label: "Price: Low to High" },
