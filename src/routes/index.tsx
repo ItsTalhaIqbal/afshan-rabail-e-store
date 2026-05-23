@@ -121,6 +121,41 @@ function Home() {
         </div>
       </section>
 
+      {/* NEW ARRIVALS */}
+      {newArrivals.length > 0 && (
+        <section className="bg-cream-dark/30 py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6">
+            <div className="flex items-end justify-between mb-8">
+              <div>
+                <p className="text-xs uppercase tracking-wider text-brown-light">Just in</p>
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-text-dark">New Arrivals</h2>
+              </div>
+              <Link to="/products" className="text-sm font-medium text-brown hover:text-brown-dark hidden sm:inline">Shop all →</Link>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+              {newArrivals.map((p) => <ProductCard key={p.id} product={p} />)}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* BRIDAL BANNER */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-16">
+        <div className="relative overflow-hidden rounded-3xl grid md:grid-cols-2 bg-brown-dark text-cream shadow-xl">
+          <div className="p-10 md:p-14 flex flex-col justify-center">
+            <span className="inline-block w-fit rounded-full bg-gold/20 text-gold px-3 py-1 text-xs uppercase tracking-wider font-medium">Bridal Edit</span>
+            <h2 className="mt-4 font-display text-3xl md:text-5xl font-bold leading-tight">Crafted for your special day.</h2>
+            <p className="mt-4 text-cream/80 text-sm md:text-base max-w-md">Hand-embellished pearls, intricate threadwork, and luxe fabrics — discover bridal abayas designed to make memories.</p>
+            <Link to="/products" className="mt-6 inline-flex w-fit rounded-md bg-gold px-6 py-3 text-sm font-semibold text-brown-dark hover:bg-cream transition">Explore Bridal</Link>
+          </div>
+          <div className="relative min-h-[300px] md:min-h-[400px]">
+            <img src={catBridal} alt="Bridal abaya" className="absolute inset-0 h-full w-full object-cover" />
+          </div>
+        </div>
+      </section>
+
+
+
       {/* WHY CHOOSE US */}
       <section className="bg-cream-dark/40 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
