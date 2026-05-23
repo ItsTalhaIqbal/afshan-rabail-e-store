@@ -179,7 +179,45 @@ function Home() {
         </div>
       </section>
 
+      {/* BESTSELLERS */}
+      {bestSellers.length > 0 && (
+        <section className="mx-auto max-w-7xl px-4 sm:px-6 py-16">
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <p className="text-xs uppercase tracking-wider text-brown-light">Customer favourites</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-text-dark">Bestsellers</h2>
+            </div>
+            <Link to="/products" className="text-sm font-medium text-brown hover:text-brown-dark hidden sm:inline">View all →</Link>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+            {bestSellers.map((p) => <ProductCard key={p.id} product={p} />)}
+          </div>
+        </section>
+      )}
+
+      {/* LOOKBOOK */}
+      <section className="bg-cream-dark/40 py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="text-center mb-10">
+            <p className="text-xs uppercase tracking-wider text-brown-light">@afshanrabail</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-text-dark">From the Lookbook</h2>
+            <p className="mt-2 text-sm text-muted-foreground">Styled moments from our community. Tag us to be featured.</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+            {lookbook.map((img, i) => (
+              <Link key={i} to="/products" className="group relative aspect-square overflow-hidden rounded-lg">
+                <img src={img} alt={`Lookbook ${i + 1}`} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-brown-dark/0 group-hover:bg-brown-dark/40 transition flex items-center justify-center">
+                  <span className="text-cream text-xs font-medium opacity-0 group-hover:opacity-100 transition">View →</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* TESTIMONIALS */}
+
       <section className="mx-auto max-w-7xl px-4 sm:px-6 py-16">
         <h2 className="text-center font-display text-3xl md:text-4xl font-bold text-text-dark">Loved by Modest Women</h2>
         <div className="mt-10 grid md:grid-cols-3 gap-6">
