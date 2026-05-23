@@ -84,21 +84,31 @@ function Home() {
         </div>
       </section>
 
-      {/* CATEGORY STRIP */}
-      <section className="overflow-hidden border-y border-cream-dark bg-cream-dark/40 py-6">
-        <div className="flex animate-marquee-slow whitespace-nowrap">
-          {[...categories, ...categories, ...categories].map((c, i) => (
-            <Link key={i} to="/products" className="flex items-center gap-3 px-8 group">
-              <span className="text-2xl">{c.icon}</span>
-              <span className="font-display text-lg text-text-dark group-hover:text-brown transition">{c.name}</span>
-              <span className="text-brown-light">✦</span>
+      {/* SHOP BY CATEGORY */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-16">
+        <div className="text-center mb-10">
+          <p className="text-xs uppercase tracking-wider text-brown-light">Explore</p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-text-dark">Shop by Category</h2>
+          <p className="mt-2 text-sm text-muted-foreground max-w-md mx-auto">From everyday casual drapes to embellished bridal pieces — find your modest style.</p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {shopCategories.map((c) => (
+            <Link key={c.name} to="/products" className="group relative overflow-hidden rounded-xl aspect-[3/4] shadow-sm hover:shadow-xl transition">
+              <img src={c.img} alt={c.name} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brown-dark/90 via-brown-dark/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-cream">
+                <h3 className="font-display text-xl font-semibold">{c.name}</h3>
+                <p className="text-xs text-cream/80">{c.desc}</p>
+                <span className="mt-2 inline-block text-xs font-medium opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition">Shop now →</span>
+              </div>
             </Link>
           ))}
         </div>
       </section>
 
       {/* FEATURED PRODUCTS */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-16">
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 pb-16">
+
         <div className="flex items-end justify-between mb-8">
           <div>
             <p className="text-xs uppercase tracking-wider text-brown-light">Curated picks</p>
