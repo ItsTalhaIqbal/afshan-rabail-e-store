@@ -47,7 +47,10 @@ const testimonials = [
 function Home() {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
   const featured = products.slice(0, 6);
+  const newArrivals = products.filter((p) => p.badge === "NEW").slice(0, 4);
+  const bestSellers = products.filter((p) => p.badge === "BESTSELLER").slice(0, 4);
 
   return (
     <div>
