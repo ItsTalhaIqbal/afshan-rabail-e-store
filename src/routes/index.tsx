@@ -231,7 +231,32 @@ function Home() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="mx-auto max-w-3xl px-4 sm:px-6 py-16">
+        <div className="text-center mb-10">
+          <p className="text-xs uppercase tracking-wider text-brown-light">Help center</p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-text-dark">Frequently Asked Questions</h2>
+        </div>
+        <div className="space-y-3">
+          {faqs.map((f, i) => (
+            <div key={i} className="rounded-xl border border-cream-dark bg-card overflow-hidden">
+              <button
+                onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                className="w-full flex items-center justify-between px-5 py-4 text-left"
+              >
+                <span className="font-display text-base font-semibold text-text-dark">{f.q}</span>
+                <ChevronDown className={`h-4 w-4 text-brown transition-transform ${openFaq === i ? "rotate-180" : ""}`} />
+              </button>
+              {openFaq === i && (
+                <div className="px-5 pb-5 text-sm text-muted-foreground">{f.a}</div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* NEWSLETTER */}
+
       <section className="bg-brown text-cream py-14">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <h2 className="font-display text-3xl font-bold text-cream">Join the Afshan Rabail family</h2>
