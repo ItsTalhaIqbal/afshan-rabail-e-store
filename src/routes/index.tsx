@@ -1,14 +1,42 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { products, categories } from "@/lib/products";
+import { products } from "@/lib/products";
 import { ProductCard } from "@/components/ProductCard";
 import { StarRating } from "@/components/StarRating";
-import { Truck, ShieldCheck, RotateCcw, Sparkles } from "lucide-react";
+import { Truck, ShieldCheck, RotateCcw, Sparkles, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import heroImg from "@/assets/products/abaya-ivory-bridal.jpg";
+import catCasual from "@/assets/products/abaya-grey-plain.jpg";
+import catFestive from "@/assets/products/abaya-maroon-embroidered.jpg";
+import catBridal from "@/assets/products/abaya-ivory-bridal.jpg";
+import catScarves from "@/assets/products/scarf-silk-stack.jpg";
+import catImported from "@/assets/products/abaya-charcoal-turkish.jpg";
+import lookA from "@/assets/products/abaya-black-stones.jpg";
+import lookB from "@/assets/products/abaya-pink-pearl.jpg";
+import lookC from "@/assets/products/abaya-green-velvet.jpg";
+import lookD from "@/assets/products/abaya-olive-kimono.jpg";
+import lookE from "@/assets/products/scarf-emerald-silk.jpg";
+import lookF from "@/assets/products/abaya-navy-butterfly.jpg";
 
 export const Route = createFileRoute("/")({
   component: Home,
 });
+
+const shopCategories = [
+  { name: "Casual", img: catCasual, desc: "Everyday modesty" },
+  { name: "Festive", img: catFestive, desc: "Eid & gatherings" },
+  { name: "Bridal", img: catBridal, desc: "Embellished elegance" },
+  { name: "Scarves", img: catScarves, desc: "Silk, chiffon & jersey" },
+  { name: "Imported", img: catImported, desc: "Turkish & Dubai picks" },
+];
+
+const lookbook = [lookA, lookB, lookC, lookD, lookE, lookF];
+
+const faqs = [
+  { q: "Do you offer Cash on Delivery?", a: "Yes — Cash on Delivery is available across Pakistan with no advance payment required." },
+  { q: "How long does delivery take?", a: "Orders are dispatched within 24–48 hours and delivered in 3–5 working days nationwide." },
+  { q: "What is your return policy?", a: "We offer 7-day easy returns and exchanges on unworn items with original tags." },
+  { q: "Are sizes true to fit?", a: "Yes, but we recommend checking the size chart on each product page for the most accurate fit." },
+];
 
 const testimonials = [
   { name: "Ayesha K.", text: "Beautiful stitching and fabric quality is amazing. My festive abaya was a hit at Eid!", rating: 5 },
